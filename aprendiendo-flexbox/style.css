@@ -1,0 +1,106 @@
+body {
+    /*Crear variables*/
+    --rojo: red;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#layout {
+    /*Con inline-flex, la caja toma todo el tamaño del contenido de dentro, como un elemento en linea
+    Si ponemos flex, la caja cogera por defecto un ancho automatico, o el que nosotros le demos, al ser un elemento de bloque
+    */
+    /*display: inline-flex;*/
+    display: flex;
+    /*Row, en fila
+      Column, en columna
+      * reverse, los cambia al contrario
+    */
+    flex-direction: row;
+    /*Para que los elementos no desborden la caja contenedora, usamos el wrap
+    por defecto nowrap, no hace nada.
+    wrap, no sobresalen, saltan abajo.
+    */
+    flex-wrap: wrap;
+    /*Podemos unir direction y wrap en flex-flow: flex-flow;
+      flex-flow: row wrap;
+    */
+    /*------------------------*/
+    /* Alinear los elementos con justify-content. 
+    Los valores mas utilizados son flex-*   o  space-* o center
+    */
+    justify-content: space-evenly;
+    /*Con align-items, alineamos los elementos en el eje vertical
+    
+    los mas usados son: baseline, center, flex-*
+    
+    */
+    align-items: flex-start;
+    height: 600px;
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.caja {
+    /*
+    Para adaptar el tamaño de las cajas al tamaño de la caja contenedora usamos grow
+    Normalmente se le da valor 1, para que todas las cajas ocupen lo mismo, si se la damos a todos por igual.
+
+    Si se la damos a elementos de manera individual, los valores son el porcentaje de espacio que cogeran
+    Es decir, el 2 cogera mas espacio que un elemento con un 1.
+
+    */
+    /*flex-grow: 1;*/
+    /*-------------*/
+    /* flex basis es como poner un width: x%  , un width con porcentajes
+        Es el tamaño minimo o tamaño base
+    */
+    /*flex-basis: 25%;*/
+    /*flex-basis: calc((100% / 3) - 68px);*/
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border: 4px solid #222;
+    margin: 10px;
+    background-color: gray;
+}
+
+.red {
+    /*flex-grow: 130;*/
+    /*-------------*/
+    /*Podemos usar calculos con la propiedad calc*/
+    /*flex-basis: calc((100%/3)-80);*/
+    order: 4;
+    /*Uso de variables*/
+    background-color: var(--rojo);
+    /*flex-basis: 100%;*/
+    align-self: flex-end;
+}
+
+.green {
+    /*flex-grow: 7;*/
+    order: 2;
+    background-color: green;
+    align-self: center;
+}
+
+.blue {
+    /*Con flex shrink disminuimos el tamaño del elemento*/
+    /*flex-shrink: 0;*/
+    /*------------------------*/
+    /* Con order, ordenamos los elementos dentro del flexbox
+       Si queremos ponerlo como primer elemento, debemos poner -1, cuando no ponemos mas order en nuestro flexbox
+
+    */
+    /*align-self es como align item pero para el elemento en cuestion*/
+    align-self: flex-start;
+    order: 1;
+    background-color: blue;
+}
+
+.orange {
+    order: 3;
+    background-color: orange;
+    align-self: center;
+}

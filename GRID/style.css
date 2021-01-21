@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.layout {
+    width: 80%;
+    min-height: 400px;
+    margin: 0px auto;
+    display: grid;
+    /*GENERA MARGENES ENTRE LOS ELEMENTOS*/
+    grid-gap: 10px;
+    /*definir las columnas
+    
+        podemos usar repeat(nveces, tamaño)
+        
+        podemos usar 1fr de medida, mas responsive
+        */
+    grid-template-columns: repeat(2, 1fr);
+    /* Definimos filas*/
+    grid-template-rows: repeat(2, 1fr) 3fr;
+    border: 3px solid orangered;
+    padding: 10px;
+}
+
+.layout .caja {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    border: 4px solid #222;
+    background-color: gray;
+}
+
+.layout .red {
+    /*Expandir columnas*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: red;
+}
+
+.layout .blue {
+    /*Expandir filas*/
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: blue;
+}
+
+.layout .green {
+    background-color: green;
+}
+
+.layout .pink {
+    background-color: pink;
+}
